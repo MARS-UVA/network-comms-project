@@ -1,0 +1,1 @@
+This is the directory for communication for the webapp side of the communication protocol

@@ -1,0 +1,1 @@
+This is the directory for the robot side of the communication protocol
