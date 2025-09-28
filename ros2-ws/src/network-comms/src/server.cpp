@@ -4,6 +4,7 @@
 #include <thread>
 #include <sys/socket.h>
 #include <arpa/inet.h>
+#include "main.hpp"
 
 int create_server (){
     struct sockaddr_in server_addr, client_addr;
