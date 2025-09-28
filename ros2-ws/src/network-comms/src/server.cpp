@@ -5,8 +5,9 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include "main.hpp"
+#include <stdexcept>
 
-int create_server (){
+int create_server (ThreadInfo *info){
     struct sockaddr_in server_addr, client_addr;
     memset(&server_addr, '\0', sizeof(server_addr));
     char server_message[2000], client_message[2000];
@@ -25,13 +26,14 @@ int create_server (){
         throw std::runtime_error("Error setting socket options");
     }
 
+    struct sockaddr *server_addr_ptr = (struct sockaddr *)&server_addr;
+    socklen_t client_len = sizeof(client_addr);
     bind (socket_desc, server_addr_ptr, sizeof(server_addr));
 
-    char buffer [1024];
-
+    
     while (true){
-    recvfrom (socket_desc, buffer, sizeof(buffer),0, (struct sockaddr *)&client_addr, &client_len);
-     //printf buffer;
+        recvfrom (socket_desc, info->client_message, sizeof(info->client_message),0, (struct sockaddr *)&client_addr, &client_len);
+        info->flag = true;
     }
 
 

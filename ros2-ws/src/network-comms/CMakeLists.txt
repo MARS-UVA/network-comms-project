@@ -7,9 +7,28 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package (rclcpp REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+
+add_executable(net_node
+  src/net-node.cpp
+  src/server.cpp
+)
+
+target_link_libraries(net_node PUBLIC
+      ${std_msgs_TARGETS}
+      rclcpp::rclcpp
+)
+
+install(TARGETS 
+  net_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

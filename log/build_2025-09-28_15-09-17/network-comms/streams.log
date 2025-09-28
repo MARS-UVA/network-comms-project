@@ -1,0 +1,8 @@
+[0.012s] Invoking command in '/home/uez2rc/network-comms-project/build/network-comms': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake /home/uez2rc/network-comms-project/ros2-ws/src/network-comms -DCMAKE_INSTALL_PREFIX=/home/uez2rc/network-comms-project/install/network-comms
+[0.022s] [31mCMake Error at CMakeLists.txt:17:
+[0.022s]   Parse error.  Expected a command name, got unquoted argument with text
+[0.022s]   "add-executable".
+[0.022s] 
+[0.023s] [0m
+[0.024s] -- Configuring incomplete, errors occurred!
+[0.026s] Invoked command in '/home/uez2rc/network-comms-project/build/network-comms' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake /home/uez2rc/network-comms-project/ros2-ws/src/network-comms -DCMAKE_INSTALL_PREFIX=/home/uez2rc/network-comms-project/install/network-comms

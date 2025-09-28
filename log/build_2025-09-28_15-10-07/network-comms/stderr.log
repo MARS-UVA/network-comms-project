@@ -1,0 +1,26 @@
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/net-node.cpp:8:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+    8 | #include [01;31m[K"rclcpp/rclcpp.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/net_node.dir/build.make:76: CMakeFiles/net_node.dir/src/net-node.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:[m[K In function ‘[01m[Kint[01;32m[K create_server[m[K(ThreadInfo*)[m[K’:
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:25:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kruntime_error[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   25 |         throw std::[01;31m[Kruntime_error[m[K("Error setting socket options");
+      |                    [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:8:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::runtime_error[m[K’ is defined in header ‘[01m[K<stdexcept>[m[K’; did you forget to ‘[01m[K#include <stdexcept>[m[K’?
+    7 | #include "main.hpp"
+  +++ |+[32m[K#include <stdexcept>[m[K
+    8 | 
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:12:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kserver_message[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   12 |     char [01;35m[Kserver_message[m[K[2000], client_message[2000];
+      |          [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:12:32:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kclient_message[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   12 |     char server_message[2000], [01;35m[Kclient_message[m[K[2000];
+      |                                [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:13:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kclient_struct_length[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   13 |     socklen_t [01;35m[Kclient_struct_length[m[K = sizeof(client_addr);
+      |               [01;35m[K^~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/net_node.dir/build.make:90: CMakeFiles/net_node.dir/src/server.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/net_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,4 @@
+source;share/network-comms/local_setup.bash
+source;share/network-comms/local_setup.dsv
+source;share/network-comms/local_setup.sh
+source;share/network-comms/local_setup.zsh

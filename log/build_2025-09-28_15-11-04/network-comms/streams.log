@@ -1,0 +1,70 @@
+[0.043s] Invoking command in '/home/uez2rc/network-comms-project/build/network-comms': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --build /home/uez2rc/network-comms-project/build/network-comms -- -j8 -l8
+[0.080s] -- Found ament_cmake: 2.7.3 (/opt/ros/kilted/share/ament_cmake/cmake)
+[0.257s] -- Found std_msgs: 5.5.0 (/opt/ros/kilted/share/std_msgs/cmake)
+[0.312s] -- Found rosidl_generator_c: 4.9.5 (/opt/ros/kilted/share/rosidl_generator_c/cmake)
+[0.319s] -- Found rosidl_generator_cpp: 4.9.5 (/opt/ros/kilted/share/rosidl_generator_cpp/cmake)
+[0.327s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.336s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.354s] -- Found rclcpp: 29.5.2 (/opt/ros/kilted/share/rclcpp/cmake)
+[0.403s] -- Found rmw_implementation_cmake: 7.8.2 (/opt/ros/kilted/share/rmw_implementation_cmake/cmake)
+[0.403s] -- Found rmw_fastrtps_cpp: 9.3.2 (/opt/ros/kilted/share/rmw_fastrtps_cpp/cmake)
+[0.438s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.511s] [0mCMake Deprecation Warning at /opt/ros/kilted/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:87 (message):
+[0.511s]   ament_target_dependencies() is deprecated.  Use target_link_libraries()
+[0.511s]   with modern CMake targets instead.  Try replacing this call with:
+[0.511s] 
+[0.511s]     target_link_libraries(net_node PUBLIC
+[0.511s]       ${std_msgs_TARGETS}
+[0.511s]       rclcpp::rclcpp
+[0.511s]     )
+[0.511s] 
+[0.511s] Call Stack (most recent call first):
+[0.511s]   CMakeLists.txt:22 (ament_target_dependencies)
+[0.512s] 
+[0.512s] [0m
+[0.512s] -- Found ament_lint_auto: 0.19.2 (/opt/ros/kilted/share/ament_lint_auto/cmake)
+[0.584s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.584s] -- Configured cppcheck include dirs: 
+[0.584s] -- Configured cppcheck exclude dirs and/or files: 
+[0.584s] -- Added test 'lint_cmake' to check CMake code style
+[0.584s] -- Added test 'uncrustify' to check C / C++ code style
+[0.584s] -- Configured uncrustify additional arguments: 
+[0.585s] -- Added test 'xmllint' to check XML markup files
+[0.585s] -- Configuring done (0.5s)
+[0.595s] -- Generating done (0.0s)
+[0.599s] -- Build files have been written to: /home/uez2rc/network-comms-project/build/network-comms
+[0.626s] [ 66%] [32mBuilding CXX object CMakeFiles/net_node.dir/src/net-node.cpp.o[0m
+[0.626s] [ 66%] [32mBuilding CXX object CMakeFiles/net_node.dir/src/server.cpp.o[0m
+[0.802s] [01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:[m[K In function ‘[01m[Kint[01;32m[K create_server[m[K(ThreadInfo*)[m[K’:
+[0.802s] [01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:13:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kserver_message[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[0.802s]    13 |     char [01;35m[Kserver_message[m[K[2000], client_message[2000];
+[0.802s]       |          [01;35m[K^~~~~~~~~~~~~~[m[K
+[0.802s] [01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:13:32:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kclient_message[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[0.802s]    13 |     char server_message[2000], [01;35m[Kclient_message[m[K[2000];
+[0.802s]       |                                [01;35m[K^~~~~~~~~~~~~~[m[K
+[0.802s] [01m[K/home/uez2rc/network-comms-project/ros2-ws/src/network-comms/src/server.cpp:14:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kclient_struct_length[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[0.802s]    14 |     socklen_t [01;35m[Kclient_struct_length[m[K = sizeof(client_addr);
+[0.803s]       |               [01;35m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[5.612s] [100%] [32m[1mLinking CXX executable net_node[0m
+[6.137s] [100%] Built target net_node
+[6.148s] Invoked command in '/home/uez2rc/network-comms-project/build/network-comms' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --build /home/uez2rc/network-comms-project/build/network-comms -- -j8 -l8
+[6.158s] Invoking command in '/home/uez2rc/network-comms-project/build/network-comms': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --install /home/uez2rc/network-comms-project/build/network-comms
+[6.164s] -- Install configuration: ""
+[6.165s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/lib/network-comms/net_node
+[6.165s] -- Set non-toolchain portion of runtime path of "/home/uez2rc/network-comms-project/install/network-comms/lib/network-comms/net_node" to ""
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/ament_index/resource_index/package_run_dependencies/network-comms
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/ament_index/resource_index/parent_prefix_path/network-comms
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/environment/ament_prefix_path.sh
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/environment/ament_prefix_path.dsv
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/environment/path.sh
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/environment/path.dsv
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/local_setup.bash
+[6.166s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/local_setup.sh
+[6.167s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/local_setup.zsh
+[6.167s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/local_setup.dsv
+[6.167s] -- Up-to-date: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/package.dsv
+[6.168s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/ament_index/resource_index/packages/network-comms
+[6.168s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/cmake/network-commsConfig.cmake
+[6.168s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/cmake/network-commsConfig-version.cmake
+[6.168s] -- Installing: /home/uez2rc/network-comms-project/install/network-comms/share/network-comms/package.xml
+[6.171s] Invoked command in '/home/uez2rc/network-comms-project/build/network-comms' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --install /home/uez2rc/network-comms-project/build/network-comms
