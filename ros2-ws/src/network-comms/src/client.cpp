@@ -18,7 +18,7 @@ void client_send(unsigned char *data, size_t bytes_to_send)
     struct sockaddr_in control_station_addr;
     control_station_addr.sin_family = AF_INET;
     control_station_addr.sin_port = htons(9000);
-    control_station_addr.sin_addr.s_addr = inet_addr("192.168.1.100"); // replace with real IP
+    control_station_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // replace with real IP
 
     char sendBuffer[CHUNK_SIZE];
     memset(sendBuffer, '\0', sizeof(sendBuffer));
