@@ -17,15 +17,27 @@ find_package (rclcpp REQUIRED)
 add_executable(net_node
   src/net-node.cpp
   src/server.cpp
+  src/client.cpp
+)
+add_executable(string_publisher
+  src/string-publisher.cpp
 )
 
 target_link_libraries(net_node PUBLIC
       ${std_msgs_TARGETS}
       rclcpp::rclcpp
 )
+target_link_libraries(string_publisher PUBLIC
+      ${std_msgs_TARGETS}
+      rclcpp::rclcpp
+)
 
 install(TARGETS 
   net_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+install(TARGETS 
+  string_publisher
   DESTINATION lib/${PROJECT_NAME}
 )
 

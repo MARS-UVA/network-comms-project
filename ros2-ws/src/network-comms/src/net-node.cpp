@@ -9,6 +9,7 @@
 #include "std_msgs/msg/string.hpp"
 
 using namespace std::chrono_literals;
+using namespace std::placeholders;
 
 /* This example creates a subclass of Node and uses std::bind() to register a
 * member function as a callback from the timer. */
@@ -19,6 +20,7 @@ class NetworkNode : public rclcpp::Node {
   public:
     NetworkNode()
     : Node("Network_Node") {
+      subscription_ = this->create_subscription<std_msgs::msg::String>("feedback", 10, std::bind(&NetworkNode::topic_callback, this, _1));
       publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
       timer_ = this->create_wall_timer(
       500ms, std::bind(&NetworkNode::timer_callback, this));
@@ -35,8 +37,16 @@ class NetworkNode : public rclcpp::Node {
         }
       
     }
+
+    void topic_callback(const std_msgs::msg::String::SharedPtr msg) {
+      RCLCPP_INFO(this->get_logger(), "Recieved message to send");
+      // Finish this function
+      // Take the first 32 bytes and send over the socket
+    }
+
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
 };
 
 

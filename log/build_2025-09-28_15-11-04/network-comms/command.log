@@ -1,4 +1,0 @@
-Invoking command in '/home/uez2rc/network-comms-project/build/network-comms': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --build /home/uez2rc/network-comms-project/build/network-comms -- -j8 -l8
-Invoked command in '/home/uez2rc/network-comms-project/build/network-comms' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --build /home/uez2rc/network-comms-project/build/network-comms -- -j8 -l8
-Invoking command in '/home/uez2rc/network-comms-project/build/network-comms': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --install /home/uez2rc/network-comms-project/build/network-comms
-Invoked command in '/home/uez2rc/network-comms-project/build/network-comms' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/kilted /usr/bin/cmake --install /home/uez2rc/network-comms-project/build/network-comms
