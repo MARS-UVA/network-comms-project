@@ -2,10 +2,9 @@ class ServerSocket {
     // Local Variables
     /**
      * 
-     * @param {Number} port 
-     * @param {(receivedChunks: object) => void} onMessage 
+     * @param {Number} port
      */
-    constructor (port, onMessage) {
+    constructor (port) {
         this.PORT = port;
         this.receivedChunks = {}
         this.packetCount = 0;
