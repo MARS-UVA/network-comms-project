@@ -39,9 +39,15 @@ class NetworkNode : public rclcpp::Node {
     }
 
     void topic_callback(const std_msgs::msg::String::SharedPtr msg) {
-      RCLCPP_INFO(this->get_logger(), "Recieved message to send");
-      // Finish this function
-      // Take the first 32 bytes and send over the socket
+      RCLCPP_INFO(this->get_logger(), "Received message to send");
+
+      const std::string& str = msg->data;
+      size_t bytes_to_send = 32;
+
+      unsigned char buffer[32] = {0};
+      std::memcpy(buffer, str.data(), 32);
+
+      client_send(buffer, 32);
     }
 
     rclcpp::TimerBase::SharedPtr timer_;
