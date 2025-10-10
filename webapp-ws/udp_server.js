@@ -11,6 +11,8 @@ class ServerSocket {
         *   - Callback function, invoked when server receives a message
     */
     constructor(port, onRecvMessage) {
+        this.PORT = port;
+        this.receivedChunks = {}
 
         // Create a UDP server socket
         this.server = dgram.createSocket('udp4');
@@ -23,26 +25,27 @@ class ServerSocket {
             this.server.setRecvBufferSize(MESSAGE_LENGTH * 1000);    // Set receive buffer size to be large enough for  1000 messages
         });
 
-        // Event: When receiving a message
+        // Event: When receiving a datagram, check total number of datagrams we're receiving and 
+        // call a callback function to process the received data
         this.server.on('message', (message, remote) => {
             console.log(message.subarray(0, 10));
             //console.log(`Received message from IP: ${remote.address} and port: ${remote.port}`);
             //console.log(`Msg from client: ${message.toString()}`);
 
-            // const receivedChunks = {}
             const sequenceNumber = (message[1] << 8) | message[0];
             const totalPackets = (message[3] << 8) | message[2];
-            const chunkData = message.subarray(10);
+            const chunkData = message.subarray(10); // data starts from index 10 of message
 
             console.log(`Received packet ${sequenceNumber + 1} of ${totalPackets}`);
-            console.log(chunkData.length);
+            console.log("Length of received packet: %d", chunkData.length);
             this.receivedChunks[sequenceNumber] = chunkData;
             const totalChunks = totalPackets;
-            //Check if all packets have been received
-            //Probably keep check recievedChunks length in default, rest in logic
+            console.log(this.receivedChunks)
+
+            //If all packets have been received, invoke callback function
             if(sequenceNumber+1 >= totalChunks) {
                 // This variable (function) does logic speicific to type of data socket handles
-                onMessage(this.receivedChunks)
+                onRecvMessage(this.receivedChunks)
                 this.receivedChunks = {}
             }
             
@@ -78,6 +81,17 @@ class ServerSocket {
     }
 }
 
+
+// dummy callback function that prints the chunk of data that's received
+/**
+        * @param {Array} receivedChunks - an array of bytes received by the server
+*/
+const testOnMessage = (receivedChunks) => {
+    console.log("Printing received bytes")
+    const fullMessage = Buffer.concat(Object.values(receivedChunks));
+    fullMessage.forEach((dataByte, index) => {console.log("Byte %d: %x", index, dataByte)})
+}
+
 const imageOnMessage = (receivedChunks) => {
     console.log("All chunks received. Reassembling image.");
     console.log(Object.keys(receivedChunks));
@@ -90,5 +104,5 @@ const imageOnMessage = (receivedChunks) => {
 }
 
 // launch server sockets for image and motor feedback
-zachServer = new ServerSocket(7, imageOnMessage);
-console.log(" this runs");
+testServer = new ServerSocket(54000, testOnMessage);
+console.log("this runs");
