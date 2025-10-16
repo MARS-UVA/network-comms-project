@@ -1,3 +1,7 @@
+const dgram = require('dgram');
+
+MESSAGE_LENGTH = 100;
+
 class ServerSocket {
     // Local Variables
     /**
@@ -45,3 +49,5 @@ class ServerSocket {
         });
     }
 }
+
+socket = new ServerSocket();

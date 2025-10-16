@@ -1,3 +1,5 @@
+const dgram = require('dgram');
+
 function client(ip, data) {
     // Create a UDP socket
     const socket = dgram.createSocket('udp4');
@@ -13,4 +15,10 @@ function client(ip, data) {
         console.log('Message sent successfully');
         socket.close();
     });
+}
+
+
+while(true) {
+    client("127.0.0.1", "Hello");
+    sleep(1);
 }
