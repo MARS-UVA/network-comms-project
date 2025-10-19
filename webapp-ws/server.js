@@ -29,7 +29,7 @@ class ServerSocket {
 
         // Event: On receiving a message
         this.server.on('message', (message, remote) => {
-            console.log(message);
+            console.log(message.toString());
         });
 
         // Bind the server to the port and IP
@@ -50,4 +50,4 @@ class ServerSocket {
     }
 }
 
-socket = new ServerSocket();
+socket = new ServerSocket(9000);
