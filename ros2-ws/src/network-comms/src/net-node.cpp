@@ -30,8 +30,18 @@ class NetworkNode : public rclcpp::Node {
     void timer_callback(){
         if (info.flag){
             auto message = std_msgs::msg::String();
-            message.data = info.client_message;
-             RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
+            //Interpret Numbers
+             uint16_t dataType = (info.client_message[1] << 8) | info.client_message[0];
+             uint16_t packetNum = (info.client_message[3] << 8) | info.client_message[2];
+             uint16_t totalPackets = (info.client_message[5] << 8) | info.client_message[4];
+             uint16_t fragmentSize = (info.client_message[7] << 8) | info.client_message[6];
+             uint16_t crc = (info.client_message[9] << 8) | info.client_message[8];
+            //Extract message
+            char* data = new char[fragmentSize];
+            std::memcpy(&data[0], &info.client_message +10, fragmentSize);
+            
+            message.data = data;
+            RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
             publisher_->publish(message);
             info.flag = false;
         }

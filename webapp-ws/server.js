@@ -29,7 +29,18 @@ class ServerSocket {
 
         // Event: On receiving a message
         this.server.on('message', (message, remote) => {
-            console.log(message.toString());
+            let header = message.subarray(0,10);
+            //Interpret Numbers
+            const dataType = (header[1] << 8) | header[0];
+            const packetNum = (header[3] << 8) | header[2];
+            const totalPackets = (header[5] << 8) | header[4];
+            const fragmentSize = (header[7] << 8) | header[6];
+            const crc = (header[9] << 8) | header[8];
+            //Extract message
+            const data = message.subarray(10,fragmentSize);
+
+
+            console.log(data.toString());
         });
 
         // Bind the server to the port and IP

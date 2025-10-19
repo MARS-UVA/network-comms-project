@@ -16,7 +16,7 @@ int create_server (ThreadInfo *info){
     int socket_desc = socket (AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(8080);
+    server_addr.sin_port = htons(10000);
     server_addr.sin_addr.s_addr = inet_addr("0.0.0.0");
 
     // Bind to the set port and IP:
